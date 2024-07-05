@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), local('sans-serif'), url(/app/fonts/roboto-regular.woff2) format('woff2'), url(/app/fonts/roboto-regular.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), local('sans-serif-medium'), url(/app/fonts/roboto-medium.woff2) format('woff2'), url(app/fonts/roboto-medium.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.zermelo-body {
+  max-width: 400px;
+  padding: 7% 0 0;
+  margin: auto;
+}
+
+@media screen and (max-height: 700px) {
+	.zermelo-body {
+	  padding: 0;
+	}
+}
+.rememberMeInfo {
+    display: none;
+    text-align: left;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 400px;
+  margin: 0 0 0 auto;
+  padding: 30px 30px 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input[type=text], .form input[type=password], .form select {
+  font-family: sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form label {
+	display: block;
+  font-size: 100%;
+  text-align: left;
+  margin-bottom: 7px;
+}
+.form .button {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #d43737;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0px;
+  display: block;
+    box-sizing: border-box;
+}
+
+.form .button:hover,.form .button:active,.form .button:focus {
+  background: #ee3c3c;
+  text-decoration: none;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+a {
+  color: #e82e2e;
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #e7e8e9;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+/* Aanpassingen door Zermelo */
+
+h2 {
+	color: #e82e2e;
+	margin-top: 40px;
+}
+
+body {
+	color: #464646;
+}
+
+.status h3 {
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+.status p {
+	margin-top: 5px;
+}
+
+.status {
+	text-align: left;
+}
+
+.message-page {
+  text-align: left;
+}
+
+.message-page .button {
+    text-align: center;
+}
+
+.logo {
+	width: 70%;
+	margin-bottom: 0px;
+}
+
+.error {
+	color: #e72424;
+	text-align: left;
+}
+
+.forgot {
+	white-space: nowrap;
+	float:right;
+	margin-top: 5px;
+    font-size: 80%;
+}
+
+/* Hide box on small screens. */
+@media (max-width: 480px) {
+  body {
+    background: white;
+  }
+  .form {
+    box-shadow: none;
+    padding-top: 0;
+  }
+}
+
+.choices {
+	padding-top: 32px;
+	padding-bottom: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.choices a {
+	text-decoration: none;
+	flex: 0 1 50%;
+	display: flex;
+}
+
+.choice {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+    color: #4a4a4a;
+    background-color: #eef1f5;
+}
+
+.choice i {
+	padding: 30px;
+	font-size: 72px;
+    background-color: #d43737;
+    color: #ffffff;
+}
+
+.choice .title {
+	font-family: Roboto;
+	font-weight: 500;
+	font-size: 22px;
+    text-align: left;
+	padding-top: 24px;
+	padding-left: 16px;
+	color: #425972;
+}
+
+.choice ul {
+	margin-top: 0px;
+    text-align: left;
+	padding-left: 12px;
+	padding-right: 8px;
+}
+
+.choice li {
+	font-size: 14px;
+	line-height: 18px;
+	font-family: Roboto;
+	font-weight: 400;
+	color: #425972;
+}
+
+
+.selected i {
+    background-color: #425972;
+    color: white;
+}
+
+
+.choices a:first-child {
+    margin-right: 16px;
+}
+
+.choice .title {
+    font-weight: bold;
+}
+
+.properties {
+    text-align: left;
+    padding-left: 16px;
+    margin: 0px;
+    margin-top: 8px;
+}
+
+.form input[type=checkbox]
+{
+  transform: scale(1.5);
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.form .submit {
+	background-color: #d43737;
+	border: none;
+	padding: 8px;
+	color: white;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.form .chooseAppRememberMe {
+    margin-top: 16px;
+}
+
+.new_password:invalid {
+  background: url("../sc/skins/zermelo/images/Dialog/error.png") no-repeat right;
+  background-size: 1em;
+}
+.new_password:valid {
+  background: url("../sc/skins/zermelo/images/actions/accept.png") no-repeat right;
+  background-size: 1em;
+}

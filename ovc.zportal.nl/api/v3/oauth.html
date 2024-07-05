@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zermelo ovc</title>
+    <link rel="stylesheet" href="/static/v/24.07j27/css/responsive.css" type="text/css" />
+    <link rel="shortcut icon" href="/static/v/24.07j27/favicon.ico" />
+
+    <script>
+            if (window.localStorage && window.localStorage.getItem('activeApplication') == "app" && window.localStorage.getItem('activeToken')) window.location = "/app/";
+            if (window.localStorage && window.localStorage.getItem('activeApplication') == "portal" && window.localStorage.getItem('activeToken')) window.location = "/main/";
+        </script>
+        <script>
+            function updateRememberMeInfo() {
+                if (document.getElementById('rememberMe').checked) {
+                    document.getElementById("rememberMeInfo").style.display = 'block';
+                } else {
+                    document.getElementById("rememberMeInfo").style.display = 'none';
+                }
+            }
+
+            window.onload = () => {
+                if (document.getElementById("username").value == "")
+                    document.getElementById("username").focus();
+                else if (document.getElementById("password").value == "")
+                    document.getElementById("password").focus();
+                else
+                    document.getElementById("totpPassword").focus();
+
+                document.getElementById('rememberMe').addEventListener('change', function (event) {
+                    window.localStorage.setItem('rememberMe', event.target.checked);
+                    updateRememberMeInfo();
+                });
+
+                updateRememberMeInfo();
+                document.getElementById('rememberMe').checked = window.localStorage.getItem('rememberMe') == "true";
+            }
+
+            window.history.replaceState(null, "Zermelo", "/");
+        </script>
+</head>
+<body>
+    <div class="zermelo-body">
+        <div class="form">
+            <img class="logo" src="/static/v/24.07j27/img/zermelo2013.svg" alt="Zermelo Logo" />
+            
+        
+            <p class="status">
+                    Welkom bij Zermelo. Log in met je gegevens voor <i>ovc</i>.
+            </p>
+        
+
+        
+        
+            <div>
+                <a href="/api/v3/oauth?sso=true" class="button">Login met single-sign-on</a>
+                <p>
+                    of vul je gebruikersnaam en wachtwoord in:
+                </p>
+            </div>
+        
+
+        <form class="login-form" action="/api/v3/oauth" method="post" name="login" accept-charset="UTF-8">
+            
+                <p class="error"></p>
+            
+            <input name="username" type="text" value="" id="username" placeholder="Gebruikersnaam"/>
+            <input name="password" type="password" value="" id="password" placeholder="Wachtwoord"/>
+            
+            <label><input type="checkbox" id="rememberMe" value="true">Ingelogd blijven</label>
+            <div class="rememberMeInfo" id="rememberMeInfo">Je gegevens worden bewaard, en je hoeft de komende twee maanden niet in te loggen. Alleen aanzetten op je eigen telefoon, tablet of laptop.</div>
+
+            <input name="client_id" type="hidden" value="OAuthPage"/>
+            <input name="redirect_uri" type="hidden" value="/main/"/>
+            <input name="scope" type="hidden" value=""/>
+            <input name="state" type="hidden" value="4E252A"/>
+            
+                
+                
+                    <input name="response_type" type="hidden" value="code"/>
+                
+            
+            
+
+            <input name="tenant" type="hidden" value="ovc"/>
+            <input class="button" type="submit" value="Inloggen"/>
+            <span class="forgot">
+                <a href="https://handleiding.zermelo.nl" target="_blank">
+                    <img src="/static/v/24.07j27/sc/skins/zermelo/images/actions/help.png" alt="?" style="width: 1em; height: 1em; vertical-align: text-top; border: 0px;" />
+                </a>
+                <a href="/api/v3/oauth/forgotpassword" style="font-size: 1em;">Wachtwoord vergeten?</a>
+            </span>
+            <div style="clear:both"></div>
+            <div class="status">
+                
+            </div>
+        </form>
+    
+            <p class="message">
+                <em>Versie
+                    <a href='https://support.zermelo.nl/news/releases' target='_blank'>
+                        24.07.3
+                    </a>
+                    prod1 | <a href="https://status.zermelo.nl" target="_blank">Status portal</a>
+                </em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

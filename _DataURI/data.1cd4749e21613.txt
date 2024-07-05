@@ -1,0 +1,1 @@
+chrome-extension://igpdmclhhlcpoindmhkhillbfhdgoegm/writing_mode_assistant.js
